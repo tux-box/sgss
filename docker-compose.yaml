@@ -1,12 +1,9 @@
-version: "3.8"
 services:
-
   # PHP Service
   php:
     build: './php/'
     volumes:
       - ./www/:/var/www/html/
-
   # Apache Service
   apache:
     build: './apache/'
@@ -16,7 +13,6 @@ services:
       - "80:80"
     volumes:
       - ./www/:/var/www/html/
-
   # MariaDB Service
   mariadb:
     image: mariadb:10.11
@@ -24,7 +20,6 @@ services:
       MYSQL_ROOT_PASSWORD: your_password
     volumes:
       - mysqldata:/var/lib/mysql
-
   # phpMyAdmin Service
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -35,25 +30,22 @@ services:
     depends_on:
       - mariadb
       - php
-
   # vsCode Service
-  vscode:
-    build: './vsCode'
-    ports:
-      - 8000:8000
-    volumes:
-      - ./www/:/var/www/html/
-      
+  #vscode:
+  #  build: './vsCode'
+  #  ports:
+  #    - 8000:8000
+  #  volumes:
+  #    - ./www/:/var/www/html/
   # SteamCMD service
-  steamcmd:
-    build: 'steamCMD'
-    ports:
-     - 27015:27015/tcp
-     - 27015:27015/udp
-    volumes:
-      - ./steamData:/steamData
-
+  #steamcmd:
+  #  build: 'steamCMD'
+  #  ports:
+  #   - 27015:27015/tcp
+  #   - 27015:27015/udp
+  #  volumes:
+  #    - ./steamData:/steamData
 # Volumes
 volumes:
   mysqldata:
-  steamData:
+#  steamData:
