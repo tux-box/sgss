@@ -6,3 +6,5 @@ In this project we will do a few things.
 3. setup a lamp stack for manageing the actual game server. In the future this same part will manage multiple servers?
 
 Getting started. 
+I started with this tutorial.
+https://linuxiac.com/how-to-set-up-lamp-stack-with-docker-compose/
